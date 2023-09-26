@@ -6,4 +6,5 @@ export default defineNuxtConfig({
   imports: {
     autoImport: false,
   },
+  css: ["~/assets/css/style.css"],
 });

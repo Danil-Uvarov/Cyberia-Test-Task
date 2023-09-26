@@ -1,4 +1,3 @@
-vue
 <template>
   <header class="header">
     <img src="/image/logo.png" alt="" class="header__logo" />
@@ -21,11 +20,7 @@ vue
 <script setup lang="ts">
 import Burger from "./menu/burger.vue";
 </script>
-<style>
-:root {
-  --txt-white: #eef3ff;
-}
-
+<style scoped>
 .header {
   padding-top: 75px;
   display: flex;
@@ -53,7 +48,7 @@ import Burger from "./menu/burger.vue";
   font-weight: 300;
   font-size: 18px;
   list-style: none;
-  color: var(--txt-white);
+  color: #eef3ff;
 }
 
 .header__theme {

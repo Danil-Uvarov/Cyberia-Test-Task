@@ -1,6 +1,5 @@
 <template>
   <div class="page-wrapper">
-    
     <TheHeader />
     <Breadcrumbs />
     <Categories />
@@ -21,8 +20,14 @@ import TheFooter from "~/components/TheFooter.vue";
 
 <style scoped>
 .page-wrapper {
-  padding: 0 64px;
+  font-family: "Rubik";
   margin: 0 auto;
   max-width: 1242px;
+}
+@media (max-width: 1236px) {
+  .page-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 </style>

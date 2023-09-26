@@ -1,16 +1,19 @@
 <template>
-  <nav class="categories">
-    <ul class="categories-list">
-      <li
-        v-for="category in categories"
-        :key="category.id"
-        class="categories-link"
-        @click="changeCategory(category.id)"
-      >
-        {{ category.name }}
-      </li>
-    </ul>
-  </nav>
+  <div class="categories">
+    <h2 class="category__title">Проекты</h2>
+    <nav class="categories__navigation">
+      <ul class="categories-list">
+        <li
+          v-for="category in categories"
+          :key="category.id"
+          class="categories-link"
+          @click="changeCategory(category.id)"
+        >
+          {{ category.name }}
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
@@ -24,7 +27,14 @@ const changeCategory = (id: number) => {
 </script>
 
 <style>
-.categories {
+.category__title {
+  margin-top: 76px;
+  font-weight: 500;
+  font-size: 38px;
+  color: #eef3ff;
+}
+
+.categories__navigation {
   margin-top: 78px;
 }
 

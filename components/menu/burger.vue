@@ -3,36 +3,41 @@
     <button class="burger__open-button" @click="open = !open">
       <span class="burger__button-line" />
     </button>
+    <div v-if="open" class="burger__menu-wrapper">
+      <div class="burger-menu">
+        <div class="burger__navigation-block">
+          <nav class="burger__menu-navigation menu">
+            <ul class="menu__list">
+              <li class="menu__link">О нас</li>
+              <li class="menu__link">Услуги</li>
+              <li class="menu__link">Проекты</li>
+              <li class="menu__link">Блог</li>
+              <li class="menu__link">Контакты</li>
+            </ul>
+          </nav>
 
-    <div v-if="open" class="burger-menu">
-      <div class="burger__navigation-block">
-        <nav class="burger__menu-navigation menu">
-          <ul class="menu__list">
-            <li class="menu__link">О нас</li>
-            <li class="menu__link">Услуги</li>
-            <li class="menu__link">Проекты</li>
-            <li class="menu__link">Блог</li>
-            <li class="menu__link">Контакты</li>
-          </ul>
-        </nav>
-
-        <div class="burger__close-block">
-          <span key="menu" class="burger__close menu" @click="open = !open" />
+          <div class="burger__close-block" @click="open = !open">
+            <span key="menu" class="burger__close menu" />
+          </div>
         </div>
+        <div class="burger__line"></div>
+        <div class="burger__block-contacts contact">
+          <h5 class="contact__title">Контакты:</h5>
+          <a href="tel:+7 499 679 45 79" class="contact__number"
+            >+7 499 679 45 79</a
+          >
+          <a href="mailto:hello@cyberia.ru" class="contact__email"
+            >hello@cyberia.ru</a
+          >
+          <a href="" class="contact__address">Аносова 3Б, оф. 1</a>
+        </div>
+        <div class="burger__line"></div>
+        <img
+          src="../../public/image/theme.png"
+          alt=""
+          class="burger__theme-image"
+        />
       </div>
-      <div class="burger__line"></div>
-      <div class="burger__block-contacts contact">
-        <h5 class="contact__title">Контакты:</h5>
-        <a href="tel:+7 499 679 45 79" class="contact__number"
-          >+7 499 679 45 79</a
-        >
-        <a href="mailto:hello@cyberia.ru" class="contact__email"
-          >hello@cyberia.ru</a
-        >
-        <a href="" class="contact__address">Аносова 3Б, оф. 1</a>
-      </div>
-      <div class="burger__line"></div>
-      <img src="/image/theme.png" alt="" class="burger__theme-image" />
     </div>
   </div>
 </template>
@@ -45,7 +50,7 @@ interface props {
 }
 defineProps<props>();
 </script>
-<style>
+<style scoped>
 [class*="contact"] {
   color: #9aa8ba;
   font-size: 18px;
@@ -57,20 +62,24 @@ defineProps<props>();
   position: relative;
 }
 
-.burger__button-block {
-}
-
 .burger__open-button {
+  background-color: transparent;
   border: none;
-  border-radius: 3px;
+  position: relative;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
 }
 
 .burger__button-line {
+  position: absolute;
+  content: "";
+  top: 10px;
+  right: 0px;
   display: block;
   width: 24px;
   height: 3px;
   background-color: #eef3ff;
-  position: relative;
   border-radius: 3px;
 }
 
@@ -97,24 +106,26 @@ defineProps<props>();
   background-color: #eef3ff;
   border-radius: 3px;
 }
-
-.burger-menu {
-  overflow: auto;
-  padding: 97px 92px 145px 145px;
+.burger__menu-wrapper {
+  background-color: #24252f;
   position: fixed;
+  overflow: auto;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 4;
+}
+
+.burger-menu {
+  padding: 97px 92px 145px 67px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #24252f;
 }
 .burger__navigation-block {
-  position: relative;
   display: flex;
+  justify-content: space-between;
   padding-bottom: 68px;
 }
 .burger__menu-navigation {
@@ -136,7 +147,16 @@ defineProps<props>();
   color: var(--white);
 }
 
+.burger__close-block {
+  position: relative;
+  width: 31px;
+  height: 31px;
+}
 .burger__close {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
   width: 31px;
   height: 31px;
   opacity: 0.3;
@@ -145,8 +165,9 @@ defineProps<props>();
 .burger__close::before,
 .burger__close::after {
   position: absolute;
-  right: 0px;
-  content: " ";
+  top: 0px;
+  right: 15px;
+  content: "";
   height: 31px;
   width: 2px;
   background-color: #b7c6e7;
@@ -182,15 +203,14 @@ defineProps<props>();
 .contact__address {
   padding-top: 19px;
 }
-.line {
-  width:;
-}
+
 .burger__theme-image {
-  padding-top: 59px;
+  margin-top: 59px;
   width: 100%;
   height: 100%;
   max-width: 60px;
   max-height: 30px;
+  object-fit: contain;
 }
 @media (max-width: 1024px) {
   .burger {

@@ -1,5 +1,29 @@
-*{
-    margin: 0;
-    padding: 0;
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 300;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 400;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: "Rubik";
+  font-weight: 400;
+  src: url(../fonts/Rubik-Regular.ttf);
+}
+@font-face {
+  font-family: "Rubik";
+  font-weight: 500;
+  src: url(../fonts/Rubik-Medium.ttf);
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #2b2d3a;
 }

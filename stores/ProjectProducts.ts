@@ -1,6 +1,6 @@
-import {defineStore} from "pinia";
-import {IProject} from "~/models/entyties/ICategoryProjects";
-import {ICategory} from "~/models/entyties/IProjectFilter";
+import { defineStore } from "pinia";
+import { IProject } from "~/models/entyties/ICategoryProjects";
+import { ICategory } from "~/models/entyties/IProjectFilter";
 
 interface ProdutsState {
   projects: IProject[];
@@ -18,18 +18,15 @@ export const useProjectStore = defineStore("products", {
   actions: {
     async getItem() {
       const data = await $fetch<{ items: IProject[] }>(
-          "https://dev.backend.cyberia.studio/api/v1/projects"
+        "https://dev.backend.cyberia.studio/api/v1/projects"
       );
-      console.log(data.items)
       this.projects = data.items;
-
     },
     async getCategories() {
       const items = await $fetch<{ items: ICategory[] }>(
-          "https://dev.backend.cyberia.studio/api/v1/project-categories"
+        "https://dev.backend.cyberia.studio/api/v1/project-categories"
       );
       this.categories = items.items;
-
     },
   },
-})
+});
