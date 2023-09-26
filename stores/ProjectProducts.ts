@@ -4,7 +4,7 @@ import { ICategory } from "~/models/entyties/IProjectFilter";
 
 interface ProdutsState {
   projects: IProject[];
-  categories: ICategory;
+  categories: IProject[];
   currentCartegory: undefined;
 }
 

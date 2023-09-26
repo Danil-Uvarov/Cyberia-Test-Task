@@ -1,4 +1,4 @@
-import {ICategory} from "~/models/entyties/IProjectFilter";
+import { ICategory } from "~/models/entyties/IProjectFilter";
 
 export interface IProject {
   id: number;

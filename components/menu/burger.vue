@@ -58,11 +58,11 @@ defineProps<props>();
 }
 .burger {
   display: none;
-  --white: #ffff;
   position: relative;
 }
 
 .burger__open-button {
+  cursor: pointer;
   background-color: transparent;
   border: none;
   position: relative;
@@ -143,10 +143,14 @@ defineProps<props>();
 }
 
 .menu__link {
+  cursor: pointer;
   list-style: none;
-  color: var(--white);
+  color: #eef3ff;
 }
-
+.menu__link:hover {
+  transition: 0.5s;
+  border-bottom: 1px solid #2d76f9;
+}
 .burger__close-block {
   position: relative;
   width: 31px;
@@ -180,6 +184,11 @@ defineProps<props>();
 .burger__close:after {
   transform: rotate(-45deg);
 }
+.burger__close-block:hover {
+  transition: 1s;
+
+  background-color: #100d0d;
+}
 .burger__line {
   margin: 0 auto;
   width: 100%;
@@ -202,6 +211,10 @@ defineProps<props>();
 }
 .contact__address {
   padding-top: 19px;
+}
+[class*="contact"]:hover {
+  transition: 0.5s;
+  color: #eef3ff;
 }
 
 .burger__theme-image {

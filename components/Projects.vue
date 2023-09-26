@@ -49,7 +49,13 @@ const { projects } = storeToRefs(store);
   width: 100%;
   max-width: 387px;
   object-fit: contain;
-  background-image: linear-gradient(#090b21, #ffffff);
+}
+.item__bacground:hover {
+  background: linear-gradient(
+    1turn,
+    #090b21 36.98%,
+    rgba(49, 51, 65, 0) 100.42%
+  );
 }
 
 .project__image-item {

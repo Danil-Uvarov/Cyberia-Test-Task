@@ -110,11 +110,7 @@ const form = ref({
   attachment: files.value,
 });
 
-axios
-  .post("https://dev.backend.cyberia.studio/api/v1/feedbacks", form)
-  .then((response) => {
-    console.log(response.data);
-  });
+axios.post("https://dev.backend.cyberia.studio/api/v1/feedbacks", form);
 </script>
 
 <style scoped>
@@ -291,17 +287,21 @@ axios
 .form__block-button {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .form__dispatch {
   width: 100%;
   max-width: 247px;
   padding: 20px 86px;
-  background-color: #2d76f9;
+  background-color: rgba(45, 118, 249);
   border: none;
   border-radius: 35px;
 }
-
+.form__dispatch:hover {
+  transition: 0.5s;
+  background-color: rgb(8, 83, 223);
+}
 .form__description {
   max-width: 308px;
   font-size: 14px;

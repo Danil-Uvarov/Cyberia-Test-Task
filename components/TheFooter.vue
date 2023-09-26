@@ -10,13 +10,13 @@
         </div>
         <div class="navigation__wrapper">
           <div class="footer__block-contacts contact">
-            <a href="tel:+7 499 679 45 79" class="contact__number"
+            <a href="tel:+7 499 679 45 79" class="contact__item"
               >+7 499 679 45 79</a
             >
-            <a href="mailto:hello@cyberia.ru" class="contact__email"
+            <a href="mailto:hello@cyberia.ru" class="contact__item"
               >hello@cyberia.ru</a
             >
-            <a href="" class="contact__address">Аносова 3Б, оф. 1</a>
+            <a href="" class="contact__item">Аносова 3Б, оф. 1</a>
           </div>
           <nav class="footer__block-navigation navigation">
             <ul class="navigation__list">
@@ -45,11 +45,6 @@
 <script setup lang="ts"></script>
 
 <style scoped>
-[class*="contact"] {
-  color: #eef3ff;
-  font-size: 14px;
-  text-decoration: none;
-}
 .footer {
   font-family: "Open Sans";
   padding: 130px 64px 170px 64px;
@@ -74,6 +69,11 @@
 .logo__img {
   max-width: 196px;
 }
+.logo__img:hover {
+  padding-bottom: 5px;
+  transition: 0.5s;
+  border-bottom: 1px solid #2d76f9;
+}
 
 .footer__title {
   max-width: 207px;
@@ -94,6 +94,15 @@
   flex-direction: column;
   gap: 20px;
 }
+.contact__item {
+  color: #eef3ff;
+  font-size: 14px;
+  text-decoration: none;
+}
+.contact__item:hover {
+  transition: 0.5s;
+  border-bottom: 1px solid #2d76f9;
+}
 
 .footer__block-navigation {
   display: flex;
@@ -113,6 +122,10 @@
   font-size: 14px;
   font-weight: 400;
   color: #eef3ff;
+}
+.navigation__link:hover {
+  transition: 0.5s;
+  border-bottom: 1px solid #2d76f9;
 }
 
 .footer__copyright {

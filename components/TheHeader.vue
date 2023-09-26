@@ -29,8 +29,14 @@ import Burger from "./menu/burger.vue";
 }
 
 .header__logo {
+  cursor: pointer;
   width: 131px;
   height: 28px;
+}
+.header__logo:hover {
+  padding-bottom: 5px;
+  transition: 0.5s;
+  border-bottom: 1px solid #2d76f9;
 }
 
 .header__menu {
@@ -45,10 +51,17 @@ import Burger from "./menu/burger.vue";
 }
 
 .menu__link {
+  cursor: pointer;
   font-weight: 300;
   font-size: 18px;
   list-style: none;
   color: #eef3ff;
+  padding-bottom: 2px;
+}
+
+.menu__link:hover {
+  transition: 0.5s;
+  border-bottom: 1px solid #2d76f9;
 }
 
 .header__theme {

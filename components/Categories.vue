@@ -45,6 +45,7 @@ const changeCategory = (id: number) => {
 }
 
 .categories-link {
+  cursor: pointer;
   padding: 10px 29px;
   background-color: #2b2d3a;
   color: #eef3ff;
@@ -52,5 +53,9 @@ const changeCategory = (id: number) => {
   font-size: 20px;
   border-radius: 7px;
   box-shadow: -5px 10px 60px 14px rgba(23, 27, 44, 0.75);
+}
+.categories-link:hover {
+  transition: 0.3s;
+  color: #2d76f9;
 }
 </style>
