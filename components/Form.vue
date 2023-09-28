@@ -13,7 +13,7 @@
         </p>
       </div>
       <form
-        @submit.prevent="formSubmit"
+        @submit.prevent
         class="form__block-right"
         method="post"
         enctype="multipart/form-data"
@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="form__block-button">
-          <input type="submit" class="form__dispatch" />
+          <input @click="sendFeedback" type="submit" class="form__dispatch" />
           <p class="form__description">
             Нажимая “Отправить”, Вы даете согласие на обработку персональных
             данных
@@ -86,11 +86,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import axios from "axios";
+import { feedbacks } from "../api/feedbacks";
 
-const formSubmit = () => {
-  console.log("prevent");
-};
 const files = ref<File[]>([]);
 const pushFile = (event: Event) => {
   const fileList = (event.target as HTMLInputElement).files;
@@ -109,8 +106,13 @@ const form = ref({
   message: "",
   attachment: files.value,
 });
-
-axios.post("https://dev.backend.cyberia.studio/api/v1/feedbacks", form);
+const formData = new FormData();
+const sendFeedback = () => {
+  formData.append("email", form.value.email);
+  formData.append("phone", form.value.phone);
+  formData.append("message", form.value.message);
+  feedbacks(formData);
+};
 </script>
 
 <style scoped>
